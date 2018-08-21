@@ -16,7 +16,7 @@ import cucumber.api.junit.Cucumber;
 		
 		tags="@temp",
 		features="src/test/resources/darkside/features", 
-		glue="darkside/step_definitions"
+		glue="lightside/step_definitions"
 		,dryRun = false
 		)
 public class CukesRunner {}
