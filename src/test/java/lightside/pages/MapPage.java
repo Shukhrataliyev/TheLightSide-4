@@ -12,8 +12,6 @@ public class MapPage {
 			PageFactory.initElements(Driver.getDriver(), this);
 	}
 	
-	
-
 	@FindBy(linkText = "map")
 	public WebElement map;
 
