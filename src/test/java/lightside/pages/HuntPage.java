@@ -1,12 +1,14 @@
 package lightside.pages;
 
 import java.time.LocalDate;
+import java.util.List;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.Select;
 
 import lightside.utilities.Driver;
 
@@ -21,10 +23,10 @@ public class HuntPage {
 	public WebElement date; 
 	
 	@FindBy (id="timelineStart")
-	public WebElement from; 
+	public WebElement fromDropDown; 
 	
 	@FindBy (id="timelineFinish")
-	public WebElement to; 
+	public WebElement toDropDown; 
 	
 	
 	public void datePicker(int numberOfDays, WebDriver driver){
@@ -58,8 +60,24 @@ public class HuntPage {
 				}
 		}
 	}
+	
+	
+	public void fromToTime(WebDriver driver, WebElement element, String time){
+		
+		Select select= new Select(element); 
+		List<WebElement> options= select.getOptions(); 
+		for (WebElement each : options) {
+			if(each.getText().equals(time)){
+			 select.selectByValue(each.getText());
+			}
+		}
+	}
 
-
+	
+		
+		
+		
+	
 	
 	
 }
